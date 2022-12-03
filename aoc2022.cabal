@@ -31,3 +31,12 @@ executable day2
     build-depends:    base ^>=4.16.3.0
     other-modules:    Shape
                     , Outcome
+
+executable day3
+    import:           shared-properties
+    hs-source-dirs:   day3
+    main-is:          Main.hs
+    build-depends:    base ^>=4.16.3.0
+    other-modules:    Part1
+                    , Part2
+                    , Priorities
