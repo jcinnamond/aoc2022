@@ -40,3 +40,12 @@ executable day3
     other-modules:    Part1
                     , Part2
                     , Priorities
+                    
+executable day4
+    import:           shared-properties
+    hs-source-dirs:   day4
+    main-is:          Main.hs
+    build-depends:    base ^>=4.16.3.0
+    other-modules:    Part1
+                    , Part2
+                    , Parse
