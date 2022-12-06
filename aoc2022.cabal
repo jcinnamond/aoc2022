@@ -59,3 +59,11 @@ executable day5
     other-modules:    Part1
                     , Part2
                     , Parse
+
+executable day6
+    import:           shared-properties
+    hs-source-dirs:   day6
+    main-is:          Main.hs
+    build-depends:    base ^>=4.16.3.0
+    other-modules:    Part1
+                    , Part2
