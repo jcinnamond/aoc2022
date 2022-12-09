@@ -1,0 +1,8 @@
+
+executable DAY
+    import:           shared-properties
+    hs-source-dirs:   DAY
+    main-is:          Main.hs
+    build-depends:    base ^>=4.16.3.0
+    other-modules:    Part1
+                    , Part2

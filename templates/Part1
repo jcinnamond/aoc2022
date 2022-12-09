@@ -1,0 +1,4 @@
+module Part1 (solve) where
+
+solve :: String -> String
+solve _ = "part1"
