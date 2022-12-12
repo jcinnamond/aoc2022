@@ -96,3 +96,13 @@ executable day8
     other-modules:    Part1
                     , Part2
                     , Parse
+
+executable day9
+    import:           shared-properties
+    hs-source-dirs:   day9
+    main-is:          Main.hs
+    build-depends:    base ^>=4.16.3.0
+                    , containers
+    other-modules:    Part1
+                    , Part2
+                    , Rope
