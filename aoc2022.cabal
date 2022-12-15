@@ -116,3 +116,14 @@ executable day10
     other-modules:    Part1
                     , Part2
                     , CPU
+
+executable day11
+    import:           shared-properties
+    hs-source-dirs:   day11
+    main-is:          Main.hs
+    build-depends:    base ^>=4.16.3.0
+                    , extra
+    other-modules:    Part1
+                    , Part2
+                    , Monkey
+                    , Game
