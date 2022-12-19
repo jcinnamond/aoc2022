@@ -1,11 +1,10 @@
 module Game (runTurns, Relief (..)) where
 
 import Data.List (sort)
-import GHC.Integer (divInteger, modInteger)
 import Monkey (Monkey (..), Test (..), ToMonkey (..))
 import Prelude hiding (round)
 
-newtype Relief = Relief {getRelief :: Int}
+newtype Relief = Relief {getRelief :: Int -> Int}
 
 runTurns :: Relief -> Int -> [Monkey] -> Int
 runTurns r t = product . take 2 . reverse . sort . map activity . nTimes t (round r)
@@ -35,19 +34,19 @@ turn p r monkeys = go (monkeys !! p) monkeys
         (Monkey is op test outputs (interests + 1))
         (newMonkeys level (getTest test) outputs ms)
       where
-        level = op i `divInteger` toInteger (getRelief r)
+        level = getRelief r (op i)
 
-newMonkeys :: Integer -> Int -> (ToMonkey, ToMonkey) -> [Monkey] -> [Monkey]
+newMonkeys :: Int -> Int -> (ToMonkey, ToMonkey) -> [Monkey] -> [Monkey]
 newMonkeys level test outputs = updateMonkey level target
   where
-    target = (if level `modInteger` toInteger test == 0 then fst else snd) outputs
+    target = (if level `mod` test == 0 then fst else snd) outputs
 
-updateMonkey :: Integer -> ToMonkey -> [Monkey] -> [Monkey]
+updateMonkey :: Int -> ToMonkey -> [Monkey] -> [Monkey]
 updateMonkey level (ToMonkey target) ms = splice target (newM (ms !! target)) ms
   where
     newM m@(Monkey items _ _ _ _) = newMonkey m (items <> [level])
 
-newMonkey :: Monkey -> [Integer] -> Monkey
+newMonkey :: Monkey -> [Int] -> Monkey
 newMonkey (Monkey _ op test outputs interests) levels = Monkey levels op test outputs interests
 
 splice :: Int -> a -> [a] -> [a]

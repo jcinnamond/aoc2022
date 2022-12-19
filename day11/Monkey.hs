@@ -2,7 +2,7 @@ module Monkey (parseMonkeys, Monkey (..), Test (..), ToMonkey (..)) where
 
 import Data.Char (isDigit)
 
-type Operation = (Integer -> Integer)
+type Operation = (Int -> Int)
 
 newtype ToMonkey = ToMonkey Int deriving (Show, Eq)
 
@@ -10,7 +10,7 @@ newtype Test = Test {getTest :: Int} deriving (Show, Eq)
 
 newtype Interests = Interests Int deriving (Show, Eq)
 
-data Monkey = Monkey [Integer] Operation Test (ToMonkey, ToMonkey) Int
+data Monkey = Monkey [Int] Operation Test (ToMonkey, ToMonkey) Int
 
 instance Show Monkey where
   show (Monkey items op test to interests) =
