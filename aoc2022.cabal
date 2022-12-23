@@ -127,3 +127,14 @@ executable day11
                     , Part2
                     , Monkey
                     , Game
+
+executable day13
+    import:           shared-properties
+    hs-source-dirs:   day13
+    main-is:          Main.hs
+    build-depends:    base ^>=4.16.3.0
+                    , split
+                    , megaparsec
+    other-modules:    Part1
+                    , Part2
+                    , Packets
