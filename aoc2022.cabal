@@ -13,7 +13,7 @@ extra-doc-files:    CHANGELOG.md
 -- extra-source-files:
 
 common shared-properties
-    build-depends:      base >= 4.14 && < 4.17
+    build-depends:      base ^>= 4.17.0.0
 
     default-language:   Haskell2010
     ghc-options:        -Wall -Werror
@@ -23,8 +23,7 @@ executable newday
     import:           shared-properties
     hs-source-dirs:   newday
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
-                    , time ^>=1.12.2
+    build-depends:    time ^>=1.12.2
                     , text ^>=2.0.1
                     , directory ^>=1.3.8.0
 
@@ -32,13 +31,11 @@ executable day1
     import:           shared-properties
     hs-source-dirs:   day1
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
 
 executable day2
     import:           shared-properties
     hs-source-dirs:   day2
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
     other-modules:    Shape
                     , Outcome
 
@@ -46,7 +43,6 @@ executable day3
     import:           shared-properties
     hs-source-dirs:   day3
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
     other-modules:    Part1
                     , Part2
                     , Priorities
@@ -55,7 +51,6 @@ executable day4
     import:           shared-properties
     hs-source-dirs:   day4
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
     other-modules:    Part1
                     , Part2
                     , Parse
@@ -64,8 +59,7 @@ executable day5
     import:           shared-properties
     hs-source-dirs:   day5
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
-                    , extra ^>=1.7.12
+    build-depends:    extra ^>=1.7.12
     other-modules:    Part1
                     , Part2
                     , Parse
@@ -74,7 +68,6 @@ executable day6
     import:           shared-properties
     hs-source-dirs:   day6
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
     other-modules:    Part1
                     , Part2
 
@@ -82,8 +75,7 @@ executable day7
     import:           shared-properties
     hs-source-dirs:   day7
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
-                    , containers
+    build-depends:    containers
     other-modules:    Part1
                     , Part2
                     , Parse
@@ -92,7 +84,6 @@ executable day8
     import:           shared-properties
     hs-source-dirs:   day8
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
     other-modules:    Part1
                     , Part2
                     , Parse
@@ -101,8 +92,7 @@ executable day9
     import:           shared-properties
     hs-source-dirs:   day9
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
-                    , containers
+    build-depends:    containers
     other-modules:    Part1
                     , Part2
                     , Rope
@@ -111,8 +101,7 @@ executable day10
     import:           shared-properties
     hs-source-dirs:   day10
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
-                    , extra
+    build-depends:    extra
     other-modules:    Part1
                     , Part2
                     , CPU
@@ -121,8 +110,7 @@ executable day11
     import:           shared-properties
     hs-source-dirs:   day11
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
-                    , extra
+    build-depends:    extra
     other-modules:    Part1
                     , Part2
                     , Monkey
@@ -132,8 +120,7 @@ executable day13
     import:           shared-properties
     hs-source-dirs:   day13
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
-                    , split
+    build-depends:    split
                     , megaparsec
     other-modules:    Part1
                     , Part2
@@ -143,8 +130,7 @@ executable day14
     import:           shared-properties
     hs-source-dirs:   day14
     main-is:          Main.hs
-    build-depends:    base ^>=4.16.3.0
-                    , containers
+    build-depends:    containers
     other-modules:    Part1
                     , Part2
                     , Cave
